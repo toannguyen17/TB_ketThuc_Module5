@@ -1,0 +1,32 @@
+<div class="container mt-3 mb-5">
+	<h2 class="text-center">Book Manager</h2>
+	<div class="text-right mb-3">
+		<a [routerLink]="['create']">Create book</a>
+	</div>
+	<div *ngIf="!!success">{{ success }}</div>
+	<div class="card">
+		<div class="card-body">
+			<table class="table table-light">
+				<thead class="bg-danger text-white">
+				<tr>
+					<td>ID</td>
+					<td>Title</td>
+					<td>Author</td>
+					<td class="text-right">Action</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr *ngFor="let book of books">
+					<td>{{ book.id }}</td>
+					<td><a [routerLink]="'/detail/' + book.id">{{ book.title }}</a></td>
+					<td>{{ book.author }}</td>
+					<td class="text-right">
+						<a [routerLink]="'/edit/' + book.id" class="btn btn-sm btn-outline-success">Edit</a>
+						<a [routerLink]="'/delete/' + book.id" class="btn btn-sm btn-outline-danger ml-3">Delete</a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

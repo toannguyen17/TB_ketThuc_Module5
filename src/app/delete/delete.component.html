@@ -1,0 +1,12 @@
+<div class="container mt-3 mb-5">
+	<h2 class="text-center">Delete Book</h2>
+	<div class="ml-3 mb-3">
+		<a [routerLink]="['/']" class="btn btn-sm btn-outline-light text-dark">Back</a>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<div class="bg-danger text-white p-2">Confirm deletion?</div>
+			<button class="btn btn-outline-danger mt-3" (click)="onDelete()">Delete</button>
+		</div>
+	</div>
+</div>
